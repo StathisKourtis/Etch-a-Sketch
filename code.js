@@ -6,6 +6,11 @@ let collum = 16
 const box = []
 const rowArr = []
 let isDrawing = false
+let toolPeakerNumberer = 0
+let toolPeaker = [
+    brush,
+    eraser,
+]
 
 onpointerdown = () => {
     isDrawing = true
@@ -28,16 +33,15 @@ function creareGrid(row , collum)
     
         for (y = 0; y < collum; y++)
             {
-            box[y] = document.createElement("div")
-            box[y].classList.add("box")
-            box[y].style.flex = "1 1 auto"
-            box[y].style.aspectRatio = "1 / 1"
+            let element=box[y]
+            element = document.createElement("div")
+            element.classList.add("box")
+            element.style.flex = "1 1 auto"
+            element.style.aspectRatio = "1 / 1"
             // box[y].style.boxSizing = "border-box";
-            box[y].addEventListener("mouseover", function() {
-                if (isDrawing) {
-                    this.style.backgroundColor = document.getElementById("color").value;
-                }})          
-            rowArr[i].appendChild(box[y])
+            element.addEventListener("mouseover", () => toolPeaker[toolPeakerNumberer](element));
+       
+            rowArr[i].appendChild(element)
             }
         }
 }
@@ -75,9 +79,22 @@ function colorPicker()
     let color = document.getElementById("color").value
 }
 
-function toolHandler()
-{
-    
+function brush(a) {
+    if (isDrawing){
+        console.log(a)
+        a.style.backgroundColor = document.getElementById("color").value;
+        
+        
+    }
+}
+function eraser(a) {
+     if (isDrawing){
+        console.log(a)
+        a.style.backgroundColor = "white"
+        
+        
+    }
+
 }
 
 creareGrid(20 ,20)
