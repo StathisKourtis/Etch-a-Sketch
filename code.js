@@ -15,37 +15,34 @@ onpointerup = () => {
 }
 
 
-function creareGrid(row , collum){
+function creareGrid(row , collum)
+{
 
-    for (i = 0; i < row ; i++){
+    for (i = 0; i < row ; i++)
+        {
         rowArr[i] = document.createElement("div")
         rowArr[i].classList.add("row")
         container.appendChild(rowArr[i])
         rowArr[i].style.display = "flex"
        
     
-        for (y = 1; y < collum; y++){
+        for (y = 0; y < collum; y++)
+            {
             box[y] = document.createElement("div")
             box[y].classList.add("box")
             box[y].style.flex = "1 1 auto"
             box[y].style.aspectRatio = "1 / 1"
-            box[y].style.boxSizing = "border-box";
+            // box[y].style.boxSizing = "border-box";
             box[y].addEventListener("mouseover", function() {
                 if (isDrawing) {
                     this.style.backgroundColor = document.getElementById("color").value;
-
-                }
-            
-})
-            
-
-            // box[y].style.flex = "1 1 auto"
+                }})          
             rowArr[i].appendChild(box[y])
-            
-        }   
-    }
+            }
+        }
 }
-function returnGrid(){
+function returnGrid()
+{
     cleanGrid()
     row = document.getElementById("row").value
     collum = document.getElementById("collum").value
@@ -78,5 +75,9 @@ function colorPicker()
     let color = document.getElementById("color").value
 }
 
+function toolHandler()
+{
+    
+}
 
 creareGrid(20 ,20)
