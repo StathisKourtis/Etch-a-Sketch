@@ -95,3 +95,6 @@ let
    border-radius: 13px;
    
 }
+#color{
+    appearance: none;
+}
