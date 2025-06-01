@@ -10,6 +10,7 @@ let toolPeakerNumberer = 0
 let toolPeaker = [
     brush,
     eraser,
+    rainbow,
 ]
 
 onpointerdown = () => {
@@ -39,7 +40,10 @@ function creareGrid(row , collum)
             element.style.flex = "1 1 auto"
             element.style.aspectRatio = "1 / 1"
             // box[y].style.boxSizing = "border-box";
-            element.addEventListener("mouseover", () => toolPeaker[toolPeakerNumberer](element));
+            element.addEventListener("mouseover", function() {if(isDrawing) {
+
+                toolPeaker[toolPeakerNumberer](element);
+              }})
             element.addEventListener("click", () => toolPeaker[toolPeakerNumberer](element));
             rowArr[i].appendChild(element)
             }
@@ -81,21 +85,32 @@ function colorPicker()
 }
 
 function brush(a) {
+    a.style.backgroundColor = document.getElementById("color").value;
     if (isDrawing){
         console.log(a)
-        a.style.backgroundColor = document.getElementById("color").value;
         
         
     }
 }
 function eraser(a) {
+    a.style.backgroundColor ="white";
      if (isDrawing){
         console.log(a)
-        a.style.backgroundColor =" #e99cc0";
         
         
     }
 
 }
+function rainbow (a) {
+     if (isDrawing){
+        console.log(a)
+        a.style.backgroundColor = "rgb(" + 
+  Math.floor(Math.random() * 256) + "," + 
+  Math.floor(Math.random() * 256) + "," + 
+  Math.floor(Math.random() * 256) + ")";
+        
+    }
+}
+
 
 creareGrid(20 ,20)

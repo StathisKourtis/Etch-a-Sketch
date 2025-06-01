@@ -1,6 +1,8 @@
 /* *{
     border: solid red 1px;
 } */
+
+let 
  html {
   box-sizing: border-box;
 }
@@ -18,7 +20,7 @@
  .box{
     box-sizing: inherit;
     border: dotted rgb(212, 212, 212) 1px;
-    background-color: #e99cc0;
+    background-color: white;
 
  }
  .box:hover {
