@@ -7,20 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>Etch-a-Sketch</div>
-    <div>
-        <div>Grid Size</div>
-        <div>Collums</div>
-        <input type="number" id="collum">
-        <div>Rows</div>
-        <input type="number" id="row">
-        <button onclick="returnGrid()">Submit</button>
+    <div class="header">Etch-a-Sketch</div>
+    <div class="main">
+        <div class="gridInput">
+            <!-- <div>Grid Size</div> -->
+            <div>Collums</div>
+            <input class="input" type="number" id="collum">
+            <div>Rows</div>
+            <input class="input" type="number" id="row">
+            <button class="buttonA" onclick="returnGrid()">Submit</button>
+        </div>
+        <div class="container"></div>
+        <div class="tools">
+            <input type="color" id="color">
+            <img class="imageButton" 
+                src="/images/pen.jpg" 
+                alt=""
+                onclick="toolPeakerNumberer = 0">
+            <img class="imageButton" 
+                src="/images/eraser.jpg" 
+                alt=""
+                onclick="toolPeakerNumberer = 1">
+        </div>
+
     </div>
-    <div class="container"></div>
-    
-    <input type="color" id="color">
-    <button onclick="toolPeakerNumberer = 0">Brush</button>
-    <button onclick="toolPeakerNumberer = 1">Eraser</button>
+    <div class="footer">stathis kourtis TM</div>
+
 
 <script src="code.js"></script> 
 </body>

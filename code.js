@@ -40,11 +40,12 @@ function creareGrid(row , collum)
             element.style.aspectRatio = "1 / 1"
             // box[y].style.boxSizing = "border-box";
             element.addEventListener("mouseover", () => toolPeaker[toolPeakerNumberer](element));
-       
+            element.addEventListener("click", () => toolPeaker[toolPeakerNumberer](element));
             rowArr[i].appendChild(element)
             }
         }
 }
+
 function returnGrid()
 {
     cleanGrid()
@@ -90,7 +91,7 @@ function brush(a) {
 function eraser(a) {
      if (isDrawing){
         console.log(a)
-        a.style.backgroundColor = "white"
+        a.style.backgroundColor =" #e99cc0";
         
         
     }
