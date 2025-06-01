@@ -78,6 +78,7 @@ let
    border-radius: 13px;
    border:solid #e7cdf7 2px;
    aspect-ratio: 1 / 1;
+   cursor: pointer;
 }
 .imageButton:hover{
    border-color: yellow;
